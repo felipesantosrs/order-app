@@ -1,0 +1,49 @@
+{
+  "name": "order-app",
+  "version": "1.0.0",
+  "description": "NodeJS RESTful API for Order",
+  "main": "app.js",
+  "scripts": {
+    "localtest": "./node_modules/mocha/bin/mocha --recursive test/; exit 0",
+    "start": "node app.local.js",
+    "dev": "nodemon app.local.js"
+  },
+  "author": "Felipe Santos da Rocha",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "deep-diff": "^1.0.2",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.4.0",
+    "md5": "^2.2.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.1.0",
+    "object-sizeof": "^1.3.0",
+    "retry": "^0.12.0",
+    "sequelize": "^5.21.3",
+    "serverless-http": "^2.3.0",
+    "sqlite3": "^4.1.1",
+    "unidecode": "^0.1.8",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1",
+    "yamljs": "^0.3.0"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "claudia": "^5.12.0",
+    "growl": "^1.10.5",
+    "mocha": "^6.1.4",
+    "mockery": "^2.1.0",
+    "node-mocks-http": "^1.7.3",
+    "nodemon": "^1.18.10",
+    "sequelize-cli": "^5.5.1",
+    "sinon": "^7.2.4",
+    "superagent": "^4.1.0"
+  }
+}
