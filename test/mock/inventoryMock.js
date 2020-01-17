@@ -12,16 +12,18 @@ function mockInventory(testData) {
 			name: testData.hasOwnProperty('name') ? testData.name : 'Free Oil',
 			price: testData.hasOwnProperty('price') ? testData.dateOrderPlaced : 10.50,
 			quantity:testData.hasOwnProperty('quantity') ? testData.quantity  : 10
-		
-		};
+		}
+	
+		if (testData.quantityOrdered){
+			inventory.OrderInventory = {"quantyOrdered": testData.quantyOrdered};
+		}
 		return inventory;
 	} catch(e) {
 		throw e;
 	}
 }
-
 /*
-	EXPORTS ----------------------------------------------------------------------------
+EXPORTS ----------------------------------------------------------------------------
 */
 
 const publicFunctions = {

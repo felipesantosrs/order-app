@@ -41,7 +41,7 @@ function testSuite(testName, tests) {
 testSuite('getOrderByID() tests', () => {
 	it('1. returns orderByID', async () => {
 		const order = await orderService.getOrderByID(1)
-		assert.hasAllKeys(order, ['id', 'email', 'status', 'inventories',  'dateOrderPlaced'])
+		assert.hasAllKeys(order, ['id', 'email', 'status', 'Inventories', 'dateOrderPlaced'])
 	});
 	it('2. there is no order', async () => { 
 		const order = await orderService.getOrderByID(100)
@@ -62,8 +62,8 @@ testSuite('getAllOrders() tests', () => {
 
 testSuite('deleteOrder() tests', () => {
 	it('1. returns deleteOrder', async () => {
-		const id = await orderService.deleteOrder(1)
-		assert.equal(id, 1)
+		const id = await orderService.deleteOrder(300)
+		assert.equal(id, 300)
 	});
 });//END deleteOrder() tests
 
@@ -114,8 +114,8 @@ testSuite('updateOrder() tests', () => {
 
 testSuite('orderCancelation() tests', () => {
 	it('1. cancelling an order', async () => {
-		let id = await orderService.cancelOrder(1);
-		assert.equal(id, 1)
+		let id = await orderService.cancelOrder(300);
+		assert.equal(id, 300)
 	});
 
 });//END orderCancelation() tests

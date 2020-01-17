@@ -16,10 +16,10 @@ function getInventoryByID(idInv) {
 	}
 }
 function getAllInventories() {
-	let inventories = [];
-	inventories.push(Inventory.mockInventory({inventory:{id:1}}))
-	inventories.push(Inventory.mockInventory({inventory:{id:2}}))
-	return inventories;
+	let Inventories = [];
+	Inventories.push(Inventory.mockInventory({inventory:{id:1}}))
+	Inventories.push(Inventory.mockInventory({inventory:{id:2}}))
+	return Inventories;
 }
 
 
