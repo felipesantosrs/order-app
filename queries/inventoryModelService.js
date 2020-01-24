@@ -45,7 +45,7 @@ async function deleteInventory (id) {
 async function createInventory (request) {
 	try {
 		let result = await Inventory.create(request);
-		if (result && result.id) return result.id
+		if (result && result.id) return result.id;
 		return;
 	} catch (e) {
 		throw (e);
@@ -61,12 +61,12 @@ async function createInventory (request) {
 async function updateInventory (id, json) {
 	try {
 		let inventory = await Inventory.findByPk(Number.parseInt(id));
-		if (!inventory) return `Inventory id ${inventory.id} not found`
-		let result = await inventory.update(json)
-		if (result && result.id) return result.id
+		if (!inventory) return `Inventory id ${inventory.id} not found`;
+		let result = await inventory.update(json);
+		if (result && result.id) return result.id;
 		return;
 	} catch (e) {
-		throw (e)
+		throw (e);
 	}
 }
 
