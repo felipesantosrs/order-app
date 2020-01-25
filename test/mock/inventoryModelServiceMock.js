@@ -12,13 +12,13 @@ function getInventoryByID(idInv) {
 	if (idInv === 100){
 		return;
 	} else {
-		return Inventory.mockInventory({inventory:{id:idInv}})
+		return Inventory.mockInventory({inventory:{id:idInv}});
 	}
 }
 function getAllInventories() {
 	let Inventories = [];
-	Inventories.push(Inventory.mockInventory({inventory:{id:1}}))
-	Inventories.push(Inventory.mockInventory({inventory:{id:2}}))
+	Inventories.push(Inventory.mockInventory({inventory:{id:1}}));
+	Inventories.push(Inventory.mockInventory({inventory:{id:2}}));
 	return Inventories;
 }
 
@@ -31,7 +31,7 @@ function deleteInventory(id) {
 	}
 }
 
-function updateInventory(id, json) {
+function updateInventory(id) {
 	if (id === 100){
 		return `Inventory id ${id} not found`;
 	} else {

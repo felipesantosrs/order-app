@@ -46,8 +46,7 @@ inventoryRoutes.post('/', async (req, res) => {
 	try {
 		if (req && req.body) {
 			let id = await InventoryService.createInventory(req.body);
-			console.log(id)
-			return res.status(200).json(new Message(`Inventory id ${id} created`))
+			return res.status(200).json(new Message(`Inventory id ${id} created`));
 		}
 		return res.status(400).json(new Message('Request Invalid'));
 
@@ -127,7 +126,7 @@ inventoryRoutes.get('/:id', async (req, res) => {
 
 class Message {
 	constructor(message){
-		this.message = message
+		this.message = message;
 	}
 }
 /*

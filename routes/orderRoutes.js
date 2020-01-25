@@ -39,7 +39,7 @@ orderRoutes.post('/', async (req, res) => {
 	try {
 		if (req && req.body) {
 			let order = await OrderService.createOrder(req.body);
-			return res.status(200).json(order)
+			return res.status(200).json(order);
 		}
 		return res.status(400).json(new Message('Invalid Request'));
 
@@ -80,7 +80,7 @@ orderRoutes.put('/:id/cancelation', async (req, res) => {
 		if (id){
 			return res.status(200).json(new Message(`Order id ${id} cancelled`));
 		}
-		return res.status(200).json(new Message(`Order not found or already cancelled`));
+		return res.status(200).json(new Message('Order not found or already cancelled'));
 	}   catch(e) {
 		logger.error(e.stack);
 		return res.status(400).json(e);//something went wrong, log error & sent to client
@@ -138,7 +138,7 @@ orderRoutes.get('/:id', async (req, res) => {
 
 class Message {
 	constructor(message){
-		this.message = message
+		this.message = message;
 	}
 }
 /*

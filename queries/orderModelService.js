@@ -1,6 +1,6 @@
 
 const { Order, Inventory } = require('../models');
-const OrderInventoryModelService = require('../queries/orderInventoryModelService')
+const OrderInventoryModelService = require('../queries/orderInventoryModelService');
 
 
 /**
@@ -61,9 +61,9 @@ async function createOrder (request) {
 		let result = await Order.create(
 			request, 
 			{
-			fields:['email']}
-			);
-		if (result && result.id) return result.id
+				fields:['email']}
+		);
+		if (result && result.id) return result.id;
 	} catch (e) {
 		throw (e);
 	}
@@ -82,7 +82,7 @@ async function updateOrder (id, json) {
 		order.update(json);
 		return id;
 	} catch (e) {
-		throw (e)
+		throw (e);
 	}
 }
 /**
@@ -93,7 +93,7 @@ async function cancelOrder(id){
 	let orderObject = await Order.findByPk(Number.parseInt(id));
 	if (!orderObject || orderObject.status === 'C') return  null;
 	orderObject.update({status: 'C'});
-	return id
+	return id;
 }
 /*
 	EXPORTS ----------------------------------------------------------------------------

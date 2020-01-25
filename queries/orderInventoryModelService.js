@@ -2,7 +2,7 @@
 const { OrderInventory, Order, Inventory } = require('../models');
 
 
-OrderInventory.removeAttribute('id')
+OrderInventory.removeAttribute('id');
 Order.belongsToMany(Inventory, { through: OrderInventory, foreignKey: 'orderId' });
 Inventory.belongsToMany(Order, { through: OrderInventory, foreignKey: 'inventoryId' });
 
@@ -28,10 +28,10 @@ async function createOrderInventory (orID, invID, quantityOrdered ) {
  * @returns {Integer, Error}
  */
 async function deleteOrderInventory (id) {
-		return OrderInventory.destroy({
-			where: {
-				orderId: id
-			}})
+	return OrderInventory.destroy({
+		where: {
+			orderId: id
+		}});
 
 }
 

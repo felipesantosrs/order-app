@@ -7,7 +7,7 @@ const OrderModelService = require('../queries/orderModelService');
  * @returns {Object, Error} - Inventory object
  */
 async function getInventoryByID (id) {
-	return await InventoryModelService.getInventoryByID(id)
+	return await InventoryModelService.getInventoryByID(id);
 }
 
 
@@ -35,7 +35,7 @@ async function deleteInventory (id) {
  * @returns {String, Error} - message
  */
 async function createInventory (json) {
-	return await InventoryModelService.createInventory(json)
+	return await InventoryModelService.createInventory(json);
 }
 
 /**

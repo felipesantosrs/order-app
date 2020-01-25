@@ -6,7 +6,7 @@ const { logger } = require('../../services/loggingService');
 */
 
 async function createOrderInventory (orID, invID, quantityOrdered ) {
-	logger.info(`create order inventory ${orID} -  ${invID} - ${quantityOrdered}`)
+	logger.info(`create order inventory ${orID} -  ${invID} - ${quantityOrdered}`);
 }
 
 /*

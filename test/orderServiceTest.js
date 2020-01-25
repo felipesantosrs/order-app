@@ -40,12 +40,12 @@ function testSuite(testName, tests) {
 
 testSuite('getOrderByID() tests', () => {
 	it('1. returns orderByID', async () => {
-		const order = await orderService.getOrderByID(1)
-		assert.hasAllKeys(order, ['id', 'email', 'status', 'Inventories', 'dateOrderPlaced'])
+		const order = await orderService.getOrderByID(1);
+		assert.hasAllKeys(order, ['id', 'email', 'status', 'Inventories', 'dateOrderPlaced']);
 	});
 	it('2. there is no order', async () => { 
-		const order = await orderService.getOrderByID(100)
-		assert.isUndefined(order)
+		const order = await orderService.getOrderByID(100);
+		assert.isUndefined(order);
 	});
 });//END getOrderByID() tests
 
@@ -53,8 +53,8 @@ testSuite('getOrderByID() tests', () => {
 
 testSuite('getAllOrders() tests', () => {
 	it('1. returns getAllOrders', async () => {
-		const inventories = await orderService.getAllOrders()
-		assert.equal(2, inventories.length)
+		const inventories = await orderService.getAllOrders();
+		assert.equal(2, inventories.length);
 	});
 });//END getAllOrders() tests
 
@@ -62,8 +62,8 @@ testSuite('getAllOrders() tests', () => {
 
 testSuite('deleteOrder() tests', () => {
 	it('1. returns deleteOrder', async () => {
-		const id = await orderService.deleteOrder(300)
-		assert.equal(id, 300)
+		const id = await orderService.deleteOrder(300);
+		assert.equal(id, 300);
 	});
 });//END deleteOrder() tests
 
@@ -77,7 +77,7 @@ testSuite('createOrder() tests', () => {
 			await orderService.createOrder(order);
 			
 		} catch (e) {
-			assert.equal(e.message, 'No inventory informed on the order')
+			assert.equal(e.message, 'No inventory informed on the order');
 		}
 	});
 
@@ -89,7 +89,7 @@ testSuite('createOrder() tests', () => {
 			await orderService.createOrder(order);
 			
 		} catch (e) {
-			assert.equal(e.message, 'No inventory informed on the order')
+			assert.equal(e.message, 'No inventory informed on the order');
 		}
 	});
 });//END createOrder() tests
@@ -97,14 +97,14 @@ testSuite('createOrder() tests', () => {
 
 testSuite('updateOrder() tests', () => {
 	it('1. updates order', async () => {
-		let order = {email:'test@gmail.com'}
+		let order = {email:'test@gmail.com'};
 		let id = await orderService.updateOrder(1, order);
-		assert.equal(id, 1)
+		assert.equal(id, 1);
 	});
 	it('2. updates order that doesnt exist', async () => {
-		let order = {email:'test@gmail.com'}
+		let order = {email:'test@gmail.com'};
 		let error = await orderService.updateOrder(100, order);
-		assert.equal(error, 'Order id 100 not found')
+		assert.equal(error, 'Order id 100 not found');
 		
 	});
 
@@ -115,7 +115,7 @@ testSuite('updateOrder() tests', () => {
 testSuite('orderCancelation() tests', () => {
 	it('1. cancelling an order', async () => {
 		let id = await orderService.cancelOrder(300);
-		assert.equal(id, 300)
+		assert.equal(id, 300);
 	});
 
 });//END orderCancelation() tests

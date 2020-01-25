@@ -14,7 +14,7 @@ const OrderInventoryModelService = require('../queries/orderInventoryModelServic
  * @returns {Object, Error} - Order object
  */
 async function getOrderByID (id) {
-	return await OrderModelService.getOrderByID(id)
+	return await OrderModelService.getOrderByID(id);
 }
 
 
@@ -63,7 +63,7 @@ async function cancelOrder (id) {
  */
 async function createOrder (request) {
 	try {
-		let warning = []
+		let warning = [];
 		if (!request.inventories) throw Error('No inventory informed on the order');
 
 		let mapInventoryItems = sumItems(request.inventories);
@@ -72,7 +72,7 @@ async function createOrder (request) {
 		let orderID;
 		for(let inventoryID of inventoryItem) {
 			let inventory = await InventoryModelService.getInventoryByID(inventoryID);
-			let quantityOrdered = mapInventoryItems.get(inventoryID)
+			let quantityOrdered = mapInventoryItems.get(inventoryID);
 			if (inventory) {
 				let remanescent =  inventory.quantity - quantityOrdered;
 				if (remanescent >= 0) {
@@ -96,9 +96,9 @@ async function createOrder (request) {
 		}
 		let order = await OrderModelService.getOrderByID(orderID);
 		return { order, 
-				warning, 
-				message:"Order created sucessfull"
-			}
+			warning, 
+			message:'Order created sucessfull'
+		};
 	} catch (error) {
 		throw error;	
 	}
@@ -109,7 +109,7 @@ async function createOrder (request) {
  * @returns {Map}
  */
 function sumItems(inventoryIDs) {
-	return inventoryIDs.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map())
+	return inventoryIDs.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
 
 }
 

@@ -40,12 +40,12 @@ function testSuite(testName, tests) {
 
 testSuite('getInventoryByID() tests', () => {
 	it('1. returns inventoryByID', async () => {
-		const inventory = await inventoryService.getInventoryByID(10)
-		assert.hasAllKeys(inventory, ['id', 'description', 'name', 'price','quantity'])
+		const inventory = await inventoryService.getInventoryByID(10);
+		assert.hasAllKeys(inventory, ['id', 'description', 'name', 'price','quantity']);
 	});
 	it('2. there is no inventory', async () => {
-		const inventory = await inventoryService.getInventoryByID(100)
-		assert.isUndefined(inventory)
+		const inventory = await inventoryService.getInventoryByID(100);
+		assert.isUndefined(inventory);
 	});
 });//END getInventoryByID() tests
 
@@ -53,8 +53,8 @@ testSuite('getInventoryByID() tests', () => {
 
 testSuite('getAllInventories() tests', () => {
 	it('1. returns getAllInventories', async () => {
-		const inventories = await inventoryService.getAllInventories()
-		assert.equal(2, inventories.length)
+		const inventories = await inventoryService.getAllInventories();
+		assert.equal(2, inventories.length);
 	});
 });//END getAllInventories() tests
 
@@ -63,12 +63,12 @@ testSuite('getAllInventories() tests', () => {
 
 testSuite('deleteInventory() tests', () => {
 	it('1. returns deleteInventory', async () => {
-		const id = await inventoryService.deleteInventory(1)
-		assert.equal(id, 1)
+		const id = await inventoryService.deleteInventory(1);
+		assert.equal(id, 1);
 	});
 	it('2. there is no inventory', async () => {
-		const id = await inventoryService.deleteInventory(100)
-		assert.isUndefined(id)
+		const id = await inventoryService.deleteInventory(100);
+		assert.isUndefined(id);
 	});
 });//END deleteInventory() tests
 
@@ -90,14 +90,14 @@ testSuite('createInventory() tests', () => {
 
 testSuite('updateInventory() tests', () => {
 	it('1. updates inventory', async () => {
-		let inventory = {price:20.00}
+		let inventory = {price:20.00};
 		let id = await inventoryService.updateInventory(1, inventory);
-		assert.equal(id, 1)
+		assert.equal(id, 1);
 	});
 	it('2. updates inventory that doesnt exist', async () => {
-		let inventory = {price:20.00}
-			let error = await inventoryService.updateInventory(100, inventory);
-			assert.equal(error, 'Inventory id 100 not found')
+		let inventory = {price:20.00};
+		let error = await inventoryService.updateInventory(100, inventory);
+		assert.equal(error, 'Inventory id 100 not found');
 		
 	});
 
